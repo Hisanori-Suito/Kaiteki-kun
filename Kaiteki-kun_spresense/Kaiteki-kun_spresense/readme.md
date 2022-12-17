@@ -7,6 +7,7 @@
    - Spresenseはアクセスポイントモードに対応した①のプログラムを書きこみ実行する。混雑検知システムを実行する場合はSpresenseがもう一台必要となる。こちらには②のプログラムを書きこみ、1台目を立ち上げた後に起動させる。
    
    ①kaiteki_AP.ino:1台目Wifiアクセスポイント対応
+   
    ②kaiteki_CL.ino:2台目
 
 1.開発環境
@@ -16,10 +17,7 @@
    - PASSPHRASEで任意のパスワードを設定する。
 
 3.Wifiアドオンボードの設定
-   - Wifi通信用にSPRESENSE Wi-Fi Add-onボード iS110Bを使用する。公式ページからAruduino IDE向けライブラリをインクルードして開発を行う。
-   
-   https://idy-design.com/product/is110b.html
-
+   - Wifi通信用にSPRESENSE Wi-Fi Add-onボード iS110Bを使用する。[公式ページ](https://idy-design.com/product/is110b.html)からAruduino IDE向けライブラリをインクルードして開発を行う。
    - iS110BがV1.0Cの場合はライブラリを対応するコードに書き換えが必要である。またメインプログラム内の関数をInit_GS2200_SPI()からInit_GS2200_SPI_type(iS110B_TypeC)に変更する必要がある。
    - 本プログラムではV1.0Cを使用する設定にしている。
 
