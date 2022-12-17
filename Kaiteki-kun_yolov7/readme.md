@@ -2,7 +2,7 @@
 
 ## IPアドレスの準備
 
-1.  接続するspresenseと繋がっているwifiルータのIPアドレスを取得(例：Linuxではコマンド`ifconfig`)
+1.  接続するSpresenseと繋がっているwifiルータのIPアドレスを取得(例：Linuxではコマンド`ifconfig`)
 2.  取得したアドレスを`detect.py`の63行目`"http://***.***.*.**/?test="`(1台目)、67行目`"http://***.***.*.**/?test="`(2台目)に記入
     (同じアドレスを記入した場合は1台での動作となる)
 
@@ -20,7 +20,7 @@
     python detect.py --source inference/spresense/ --weights yolov7-e6e.pt --conf 0.25 --img-size 1280 --device 0﻿
     ```
 
-   - spresenseの画像は`inference/spresense/`内に1台ずつ交互に保存される
+   - Spresenseの画像は`inference/spresense/`内に1台ずつ交互に保存される
      (保存できない場合はスキップされる)
    - 物体検出を行った結果の画像は`runs/detect/exp**/`内に保存される
 
