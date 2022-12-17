@@ -1,8 +1,11 @@
 
 # 快適くん-spresense
-##Spresenseの準備
+
+## Spresenseの準備
+
    - 本システムを実行するにあたり、wifi機能を搭載したPCとSpresenseが必要となる。
    - Spresenseはアクセスポイントモードに対応した①のプログラムを書きこみ実行する。混雑検知システムを実行する場合はSpresenseがもう一台必要となる。こちらには②のプログラムを書きこみ、1台目を立ち上げた後に起動させる。
+   
    ①kaiteki_AP.ino:1台目Wifiアクセスポイント対応
    ②kaiteki_CL.ino:2台目
 
@@ -14,6 +17,7 @@
 
 3.Wifiアドオンボードの設定
    - Wifi通信用にSPRESENSE Wi-Fi Add-onボード iS110Bを使用する。公式ページからAruduino IDE向けライブラリをインクルードして開発を行う。
+   
    https://idy-design.com/product/is110b.html
 
    - iS110BがV1.0Cの場合はライブラリを対応するコードに書き換えが必要である。またメインプログラム内の関数をInit_GS2200_SPI()からInit_GS2200_SPI_type(iS110B_TypeC)に変更する必要がある。
@@ -26,7 +30,8 @@
    - PC側でSpresenseのWifiアクセスポイントに接続し画像処理用のYOLOv7を実行する。
    - IPアドレスはアクセスポイントモードのSpresenseは192.168.1.99、その他デバイスはAPに接続した順にホスト部がインクリメントされた値となる。
 
-##Spresenseの機能解説
+## Spresenseの機能解説
+
 1.音量測定機能
    - 快適くんの騒音防止機能で使用する。デバイス起動中にアナログマイクA端子に入力された音声波形の音量ピーク値を求めて設定したレベルを超えた場合に騒音検出のフラグを立てる（beepstate=4)。なおビープ音再生中はオーディオモードをマイク入力用AS_SETRECDR_STS_INPUTDEVICE_MICからAS_SETPLAYER_OUTPUTDEVICE_SPHPに変更している。そのためマイク入力の処理を行わない。
 
